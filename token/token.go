@@ -10,7 +10,7 @@ type Token struct {
 }
 
 func (t Token) String() string {
-	return "type: " + string(t.Type) + " | value: " + string(t.Literal)
+	return fmt.Sprintf("t: %-10s | v: %-10s", string(t.Type), string(t.Literal))
 }
 
 const (
@@ -66,8 +66,4 @@ func LookupIdent(ident string) TokenType {
 		return tok
 	}
 	return IDENT
-}
-
-func main() {
-	fmt.Println("vim-go")
 }
